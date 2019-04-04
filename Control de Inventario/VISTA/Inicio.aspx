@@ -14,12 +14,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        <%--<asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
                 <asp:ServiceReference Path="~/servicios/wsUsuarios.asmx" />
             </Services>
-        </asp:ScriptManager> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
+        </asp:ScriptManager> --%>
+       <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ">                          
             </ul>
@@ -41,14 +41,14 @@
                      </div>
                      <div class="modal-body">                                                                          
                           <div class="form-group">                            
-                            <input type="text" class="form-control" id="txtUser" aria-describedby="emailHelp" placeholder="Usuario"/>
+                            <input type="text" class="form-control" id="txtUser" aria-describedby="emailHelp" placeholder="Usuario"  runat="server"/>
                           </div>
                           <div class="form-group">                            
-                            <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña"/>
+                            <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" runat="server"/>
                           </div>                                                  
                      </div>
                      <div class="modal-footer">
-                         <button type="button" class="btn btn-info" runat="server" onclick="ingresar()">Iniciar</button>
+                         <asp:button type="button" class="btn btn-info" runat="server" onclick="btnIniciarSesion_click" Text="Iniciar"></asp:button>
                          <button type="button" class="btn btn-danger" data-dismiss="modal" runat="server">Cancelar</button>                         
                      </div>
                  </div>
