@@ -6,8 +6,8 @@
 });
 
 function onComplete_cargarlista(response) {
-    
-   var n = new Date();
+
+    var n = new Date();
     //Año
     y = n.getFullYear();
     //Mes
@@ -26,13 +26,13 @@ function onComplete_cargarlista(response) {
         columns: [
 
             { title: "Codigo", data: "Codigo", render: $.fn.dataTable.render.text() },
-            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() }            
+            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() }
         ]
     });
 }
 
 function guardar() {
-    var codigo = $("#txtCodigo").val();    
+    var codigo = $("#txtCodigo").val();
     var cantidad = $("#txtCantidad").val();
     var precioUnitario = $("#txtPrecioUnitario").val();
     var fecha = $("#txtFecha").val();
