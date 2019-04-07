@@ -6,8 +6,8 @@
 });
 
 function onComplete_cargarlista(response) {
-    
-   var n = new Date();
+
+    var n = new Date();
     //Año
     y = n.getFullYear();
     //Mes
@@ -30,15 +30,19 @@ function onComplete_cargarlista(response) {
         columns: [
 
             { title: "Codigo", data: "Codigo", render: $.fn.dataTable.render.text() },
+<<<<<<< HEAD
             { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() },
             { title: "Cantidad", data: "Cantidad", render: $.fn.dataTable.render.text() },
             { title: "Precio", data: "PrecioCosto", render: $.fn.dataTable.render.text() }
+=======
+            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() }
+>>>>>>> 61d1c949b525fc8e7da0440e1c9da6ac6234ef27
         ]
     });
 }
 
 function guardar() {
-    var codigo = $("#txtCodigo").val();    
+    var codigo = $("#txtCodigo").val();
     var cantidad = $("#txtCantidad").val();
     var precioUnitario = $("#txtPrecioUnitario").val();
     var fecha = $("#txtFecha").val();

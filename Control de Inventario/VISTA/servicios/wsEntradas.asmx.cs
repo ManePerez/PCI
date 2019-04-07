@@ -43,11 +43,25 @@ namespace VISTA.servicios
         }
 
         [WebMethod]
+<<<<<<< HEAD
         public bool Registrar(int id, int can, decimal precio, int codUsu, DateTime fech) {
             bool resultado = false;
             EntradaDAO dao = new EntradaDAO();
             resultado=dao.Registrar(id,can,precio,codUsu,fech);
             return resultado;
+=======
+        public string getAllReporte()
+        {
+            EntradaDAO dao;
+            dao = new EntradaDAO();
+            List<Entrada> lista;
+            lista = dao.getAllReporte();
+            String strJSON;
+
+            strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+            return strJSON;
+>>>>>>> 61d1c949b525fc8e7da0440e1c9da6ac6234ef27
         }
     }
 }
