@@ -39,5 +39,19 @@ namespace VISTA.servicios
 
             return strJSON;
         }
+
+        [WebMethod]
+        public string getAllReporte()
+        {
+            SalidaDAO dao;
+            dao = new SalidaDAO();
+            List<Salida> lista;
+            lista = dao.getAllReporte();
+            String strJSON;
+
+            strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+            return strJSON;
+        }
     }
 }

@@ -8,5 +8,10 @@ namespace DATOS.modelo
 {
     public class Entrada
     {
+        public int codigo { get; set; }
+        public int codigoProducto { get; set; }
+        public int cantidadProductos { get; set; }
+        public int codigoUsuario { get; set; }
+        public DateTime fecha { get; set; }
     }
 }

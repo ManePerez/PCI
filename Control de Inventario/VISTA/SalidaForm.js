@@ -34,8 +34,8 @@ function onComplete_cargarlista(response) {
 
 function guardar() {
     var codigo = $("#txtCodigo").val();
-    var cantidad = $("#txtCantidad").val();    
-    var fecha = $("#txtFecha").val();  
+    var cantidad = $("#txtCantidad").val();
+    var fecha = $("#txtFecha").val();
     var empleado = 1;
     var razon;
     var radios = document.getElementsByName('MotivoSalida');
@@ -44,12 +44,12 @@ function guardar() {
             razon = radios[i].value;
             break;
         }
-    }    
+    }
     var fila = "<tr><td>" + codigo + "</td><td>" + cantidad + "</td><td>" + fecha + "</td><td>" + razon + "</td></tr>" + empleado + "</td></tr>";
 
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tblProducto").appendChild(btn);
     $("#txtCodigo").val("");
-    $("#txtCantidad").val("");    
+    $("#txtCantidad").val("");
 }
