@@ -27,8 +27,8 @@ namespace DATOS.daos
                 s.codigoProducto = (int)r.ItemArray[1];
                 s.cantidadProductos = (int)r.ItemArray[2];
                 s.razonSalida = (string)r.ItemArray[3];
-                s.codigoUsuario = (int)r.ItemArray[4];
-                s.fecha = (DateTime)r.ItemArray[5];
+                s.fecha = (DateTime)r.ItemArray[4];
+                s.codigoUsuario = (int)r.ItemArray[5];                
                 lista.Add(s);
             }
             return lista;

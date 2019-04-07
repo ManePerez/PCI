@@ -43,12 +43,13 @@ namespace VISTA.servicios
         }
 
         [WebMethod]
-        public bool Registrar(int id, int can, decimal precio, int codUsu, DateTime fech) {
+        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, DateTime fech) {
             bool resultado = false;
             EntradaDAO dao = new EntradaDAO();
-            resultado = dao.Registrar(id, can, precio, codUsu, fech);
+            resultado = dao.Registrar(id, can, precio,subt, codUsu, fech);
             return resultado;
         }
+        [WebMethod]
         public string getAllReporte()
         {
             EntradaDAO dao;

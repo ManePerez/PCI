@@ -14,7 +14,7 @@ namespace DATOS.daos
     {
 
         Conexion cn = new Conexion();
-        public bool Registrar(int id, int can, decimal precio, int codUsu, DateTime fech)
+        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, DateTime fech)
         {
 
             if (cn.Conectar())
@@ -22,10 +22,11 @@ namespace DATOS.daos
                 try
                 {               
                     /// AGREGAR EL REGISTRO A LA BASE DE DATOS
-                    MySqlCommand comando = new MySqlCommand("call insertEntrada(@CodigoP, @cantidadPro,@precioUni,@codigoUsu, @fecha)", Conexion.conexion);
+                    MySqlCommand comando = new MySqlCommand("call insertEntrada(@CodigoP, @cantidadPro,@precioUni,@subt,@codigoUsu, @fecha)", Conexion.conexion);
                     comando.Parameters.AddWithValue("CodigoP", id);
                     comando.Parameters.AddWithValue("cantidadPro", can);
                     comando.Parameters.AddWithValue("precioUni", precio);
+                    comando.Parameters.AddWithValue("subt", subt);
                     comando.Parameters.AddWithValue("codigoUsu", codUsu);
                     comando.Parameters.AddWithValue("fecha", fech);
 
@@ -61,8 +62,10 @@ namespace DATOS.daos
                 e.codigo = (int)r.ItemArray[0];
                 e.codigoProducto = (int)r.ItemArray[1];
                 e.cantidadProductos = (int)r.ItemArray[2];
-                e.codigoUsuario = (int)r.ItemArray[3];
-                e.fecha = (DateTime)r.ItemArray[4];
+                e.precioUnitario = (decimal)r.ItemArray[3];
+                e.subtotal = (decimal)r.ItemArray[4];
+                e.codigoUsuario = (int)r.ItemArray[5];
+                e.fecha = (DateTime)r.ItemArray[6];
                 lista.Add(e);
             }
             return lista;

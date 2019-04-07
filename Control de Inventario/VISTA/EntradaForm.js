@@ -51,7 +51,7 @@ function guardar() {
     btn.innerHTML = fila;
     document.getElementById("tblProducto").appendChild(btn);
 
-    VISTA.servicios.wsEntradas.Registrar(codigo, cantidad, precioUnitario, empleado, fecha);
+    VISTA.servicios.wsEntradas.Registrar(codigo, cantidad, precioUnitario, subtotal, empleado, fecha);
 
     $("#txtCodigo").val("");
     $("#txtCantidad").val("");

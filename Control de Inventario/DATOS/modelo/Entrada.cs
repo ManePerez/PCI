@@ -11,6 +11,8 @@ namespace DATOS.modelo
         public int codigo { get; set; }
         public int codigoProducto { get; set; }
         public int cantidadProductos { get; set; }
+        public decimal precioUnitario { get; set; }
+        public decimal subtotal { get; set; }
         public int codigoUsuario { get; set; }
         public DateTime fecha { get; set; }
     }
