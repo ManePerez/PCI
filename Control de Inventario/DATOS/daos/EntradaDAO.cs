@@ -4,21 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DATOS.modelo;
-<<<<<<< HEAD
 using MySql.Data.MySqlClient;
-using DATOS.modelo;
 using DATOS.util;
-=======
-using DATOS.util;
-using MySql.Data.MySqlClient;
 using System.Data;
 
->>>>>>> 61d1c949b525fc8e7da0440e1c9da6ac6234ef27
 namespace DATOS.daos
 {
     public class EntradaDAO
     {
-<<<<<<< HEAD
+
         Conexion cn = new Conexion();
         public bool Registrar(int id, int can, decimal precio, int codUsu, DateTime fech)
         {
@@ -26,10 +20,7 @@ namespace DATOS.daos
             if (cn.Conectar())
             {
                 try
-                {
-                    /// CREAR LA CONEXIÓN, CONFIGURAR Y ABRIRLA
-                    //Conexion.conexion.Open();
-
+                {               
                     /// AGREGAR EL REGISTRO A LA BASE DE DATOS
                     MySqlCommand comando = new MySqlCommand("call insertEntrada(@CodigoP, @cantidadPro,@precioUni,@codigoUsu, @fecha)", Conexion.conexion);
                     comando.Parameters.AddWithValue("CodigoP", id);
@@ -52,10 +43,10 @@ namespace DATOS.daos
                 finally
                 {
                     Conexion.conexion.Close();
-                }                
+                }
             }
             return false;
-=======
+        }
         public List<Entrada> getAllReporte()
         {
             List<Entrada> lista = new List<Entrada>();
@@ -75,7 +66,6 @@ namespace DATOS.daos
                 lista.Add(e);
             }
             return lista;
->>>>>>> 61d1c949b525fc8e7da0440e1c9da6ac6234ef27
         }
     }
 }
