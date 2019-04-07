@@ -14,7 +14,8 @@ function onComplete_cargarlista(response) {
     m = n.getMonth() + 1;
     //Día
     d = n.getDate();
-    var fecha = (d + "/" + m + "/" + y);
+    var fecha = (y + "-" + m + "-" + d);
+    
     $("#txtFecha").val(fecha);
     var dataSet = JSON.parse(response);
 
@@ -23,10 +24,15 @@ function onComplete_cargarlista(response) {
         "lengthMenu": [[3], [3]],
         "bLengthChange": false,
         "info": false,
+        "columnDefs": [
+            { "targets": [2, 3], "searchable": false }
+        ],
         columns: [
 
             { title: "Codigo", data: "Codigo", render: $.fn.dataTable.render.text() },
-            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() }            
+            { title: "Nombre", data: "Nombre", render: $.fn.dataTable.render.text() },
+            { title: "Cantidad", data: "Cantidad", render: $.fn.dataTable.render.text() },
+            { title: "Precio", data: "PrecioCosto", render: $.fn.dataTable.render.text() }
         ]
     });
 }
@@ -37,13 +43,27 @@ function guardar() {
     var precioUnitario = $("#txtPrecioUnitario").val();
     var fecha = $("#txtFecha").val();
     var empleado = 1;
-
-    var fila = "<tr><td>" + codigo + "</td><td>" + cantidad + "</td><td>" + precioUnitario + "</td><td>" + fecha + "</td></tr>" + empleado + "</td></tr>";
-
+    var subtotal = $("#txtSubtotal").val();
+    var fila = "<tr><td>" + codigo + "</td><td>" + cantidad + "</td><td>" + precioUnitario +
+        "</td><td>" + subtotal + "</td><td>" + fecha + "</td></tr>";
+    
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tblProducto").appendChild(btn);
+
+    VISTA.servicios.wsEntradas.Registrar(codigo, cantidad, precioUnitario, empleado, fecha);
+
     $("#txtCodigo").val("");
     $("#txtCantidad").val("");
     $("#txtPrecioUnitario").val("");
+    S("#txtSubtotal").val("");
+}
+function Registrar() {
+    VISTA.servicios.wsEntradas.Registrar(lista);
+}
+function calcular() {
+    var cantidad = $("#txtCantidad").val();
+    var precioUnitario = $("#txtPrecioUnitario").val();
+    var subtotal = (cantidad * precioUnitario);
+    $("#txtSubtotal").val(subtotal);
 }

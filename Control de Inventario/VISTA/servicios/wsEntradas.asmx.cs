@@ -41,5 +41,13 @@ namespace VISTA.servicios
 
             return strJSON;
         }
+
+        [WebMethod]
+        public bool Registrar(int id, int can, decimal precio, int codUsu, DateTime fech) {
+            bool resultado = false;
+            EntradaDAO dao = new EntradaDAO();
+            resultado=dao.Registrar(id,can,precio,codUsu,fech);
+            return resultado;
+        }
     }
 }

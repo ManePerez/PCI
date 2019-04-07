@@ -13,13 +13,16 @@
           <div class="row">
             <div class="col">
                 <div class="form-group">                            
-                    <input type="number" oninput="listener()" class="form-control" id="txtCodigo" aria-describedby="emailHelp" placeholder="Codigo del producto"/>
+                    <input type="number" class="form-control" id="txtCodigo" aria-describedby="emailHelp" placeholder="Codigo del producto"/>
                 </div>
                 <div class="form-group">                            
-                    <input type="number" placeholder="Cantidad" class="form-control" id="txtCantidad" aria-describedby="emailHelp"/>
+                    <input type="number" oninput="calcular()" placeholder="Cantidad" class="form-control" id="txtCantidad" aria-describedby="emailHelp"/>
                 </div>
                 <div class="form-group">                            
-                    <input type="number" class="form-control" id="txtPrecioUnitario" aria-describedby="emailHelp" placeholder="Precio Unitario"/>
+                    <input type="number" oninput="calcular()" class="form-control" id="txtPrecioUnitario" aria-describedby="emailHelp" placeholder="Precio Costo"/>
+                </div>
+                <div class="form-group">                            
+                    <input type="text" class="form-control" name="txtSubtotal" id="txtSubtotal" aria-describedby="emailHelp" placeholder="Subtotal" disabled="true"/>
                 </div>
                 <div class="form-group">                            
                     <input type="text" class="form-control" name="txtFecha" id="txtFecha" aria-describedby="emailHelp" disabled="true"/>
@@ -40,8 +43,8 @@
                   <th scope="col">CodigoProducto</th>
                   <th scope="col">Cantidad</th>
                   <th scope="col">PrecioUitario</th>
+                  <th scope="col">Subtotal</th>
                   <th scope="col">Fecha</th>
-                  <th scope="col">Empleado</th>
                 </tr>
               </thead>
               <tbody id="tblProducto">                           
@@ -53,12 +56,30 @@
             <div class="row" style="margin-top:5%">
               <div class="col">              
               </div>
-               <div class="col" style="text-align:center">               
-                 <button type="button" class="btn btn-info" style="width:120px; font-weight:500">Registrar</button>
-                   <button type="button" class="btn btn-danger" style="width:120px;font-weight:500" >Cancelar</button>
+               <div class="col" style="text-align:center">                                
+                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#miModal">Finalizar</button>
              </div>
              <div class="col">              
              </div>
               </div>
-        </div>    
+        </div> 
+    <div class="modal" tabindex="-1" role="dialog" id="miModal">
+             <div class="modal-dialog" role="document">
+                 <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title text-center">Finalizar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">                                                                          
+                          <p>¿Finalizar registro de entradas?</p>                                                
+                     </div>
+                     <div class="modal-footer">
+                         <asp:button type="button" class="btn btn-info" runat="server" onclick="btnAceptar_click" Text="Aceptar"></asp:button>
+                         <button type="button" class="btn btn-danger" data-dismiss="modal" runat="server">Cancelar</button>                         
+                     </div>
+                 </div>
+             </div>
+        </div>   
 </asp:Content>
