@@ -2,7 +2,7 @@
 
 
     VISTA.servicios.wsEntradas.getAll(onComplete_cargarlista);
-
+    GetUserName();
 });
 
 function onComplete_cargarlista(response) {
@@ -66,4 +66,9 @@ function calcular() {
     var precioUnitario = $("#txtPrecioUnitario").val();
     var subtotal = (cantidad * precioUnitario);
     $("#txtSubtotal").val(subtotal);
+}
+function GetUserName() {
+
+    var username = '<%= Session["UserName"] %>';
+    alert(username);
 }

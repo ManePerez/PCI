@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using DATOS.daos;
+using DATOS.modelo;
+using Newtonsoft.Json;
 
 namespace VISTA.servicios
 {
@@ -16,11 +19,25 @@ namespace VISTA.servicios
     [System.Web.Script.Services.ScriptService]
     public class wsCategorias : System.Web.Services.WebService
     {
+        [WebMethod]
+        public string getAll()
+        {
+            CategoriaDAO dao;
+            dao = new CategoriaDAO();
+            List<Categoria> lista;
+            lista = dao.getAll();
+            String strJSON;
+            strJSON = JsonConvert.SerializeObject(lista,
+                          new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            return strJSON;
+        }
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hola a todos";
+        public bool Registrar(string nomb, string desc) {
+            CategoriaDAO dao = new CategoriaDAO();
+            bool resultado = false;
+            resultado = dao.Registrar(nomb,desc);
+            return resultado;
         }
     }
 }

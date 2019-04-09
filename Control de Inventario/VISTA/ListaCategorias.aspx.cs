@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace VISTA
 {
-    public partial class ListaProducto : System.Web.UI.Page
+    public partial class ListaCategorias : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((string)Session["usuario"] == null)
-            {
-                Response.Redirect("Inicio.aspx");
-            }
+
         }
     }
 }

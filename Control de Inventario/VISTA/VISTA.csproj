@@ -172,6 +172,8 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="CategoriaForm.aspx" />
+    <Content Include="CategoriaForm.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -1786,6 +1788,8 @@
     <Content Include="Account\Web.config" />
     <Content Include="Inicio.aspx" />
     <Content Include="Inicio.js" />
+    <Content Include="ListaCategorias.aspx" />
+    <Content Include="ListaCategorias.js" />
     <Content Include="ListaProducto.aspx" />
     <Content Include="ListaProducto.js" />
     <Content Include="ListaUsuarios.aspx" />
@@ -3371,6 +3375,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CategoriaForm.aspx.cs">
+      <DependentUpon>CategoriaForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CategoriaForm.aspx.designer.cs">
+      <DependentUpon>CategoriaForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EntradaForm.aspx.cs">
       <DependentUpon>EntradaForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3387,6 +3398,13 @@
     </Compile>
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCategorias.aspx.cs">
+      <DependentUpon>ListaCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCategorias.aspx.designer.cs">
+      <DependentUpon>ListaCategorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListaProducto.aspx.cs">
       <DependentUpon>ListaProducto.aspx</DependentUpon>

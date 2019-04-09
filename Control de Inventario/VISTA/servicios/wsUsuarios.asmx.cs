@@ -17,9 +17,9 @@ namespace VISTA.servicios
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     [System.Web.Script.Services.ScriptService]
-    public class wsUsuarios : System.Web.Services.WebService
-    {
 
+    public class wsUsuarios : System.Web.Services.WebService
+    {        
         [WebMethod]
         public string getAll()
         {
@@ -48,17 +48,23 @@ namespace VISTA.servicios
             return insert(new Usuario() { Nombre = nombre_pr, ApellidoPaterno=apePat,ApellidoMaterno=apeMat,Telefono=tel,
             Email=ema,Password=contra,User=usua,Nivel=niv});
         }
-        [WebMethod]
-        public bool ingresar(String usu, String pass) {
+        
+        [WebMethod(EnableSession =true)]
+        public bool ingresar(String usu, String pass) {            
             UsuarioDAO nd = new UsuarioDAO();
             bool resultado = false;
-            if (nd.Ingresar(usu, pass) == true)
+            string nombre = usu;
+            resultado = nd.Ingresar(usu,pass);
+            if (resultado == true)
             {
-                resultado = true;                
-            }
-            else {
-                resultado = false;
-            }
+                try
+                {
+                    Session.Add("usuario", nombre);                                        
+                }
+                catch (Exception e) {
+                    return false;
+                }                
+            }            
             return resultado;
         }
     }

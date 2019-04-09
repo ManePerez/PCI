@@ -14,11 +14,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <%--<asp:ScriptManager ID="ScriptManager1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
             <Services>
                 <asp:ServiceReference Path="~/servicios/wsUsuarios.asmx" />
             </Services>
-        </asp:ScriptManager> --%>
+        </asp:ScriptManager> 
        <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ">                          
@@ -48,7 +48,7 @@
                           </div>                                                  
                      </div>
                      <div class="modal-footer">
-                         <asp:button type="button" class="btn btn-info" runat="server" onclick="btnIniciarSesion_click" Text="Iniciar"></asp:button>
+                         <button type="button" class="btn btn-info" runat="server" onclick="ingresar()">Iniciar</button>
                          <button type="button" class="btn btn-danger" data-dismiss="modal" runat="server">Cancelar</button>                         
                      </div>
                  </div>

@@ -12,7 +12,7 @@ namespace VISTA
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session.Add("Usuario", "");
         }
         public void btnIniciarSesion_click(object sender, EventArgs e)
         {
