@@ -2,9 +2,9 @@
     VISTA.servicios.wsUsuarios.ingresar($("#txtUser").val(), $("#txtPassword").val(),onSuccess, onError);
 }
 
-function onSuccess() {
-    alert("Exito");        
+function onSuccess() {     
+    location.href = "ListaProducto.aspx";
 }
 function onError() {
-    alert("Usuario y/o contraseña incorrectos");    
+    alert("Usuario y/o contraseña incorrectos");
 }

@@ -8,6 +8,7 @@
                 <asp:ServiceReference Path="~/servicios/wsCategorias.asmx" />
             </Services>
         </asp:ScriptManager>
+    <h3>Registrar Categoria</h3>
     <div class="container" style="margin-top:5%">          
             <div class="row" style="margin-top:5%">
             <div class="col">

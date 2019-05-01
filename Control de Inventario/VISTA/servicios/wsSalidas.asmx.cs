@@ -39,14 +39,22 @@ namespace VISTA.servicios
 
             return strJSON;
         }
+        [WebMethod]
+        public bool Registrar(int id, int can, string razon,int codUsu, string fech)
+        {
+            bool resultado = false;
+            SalidaDAO dao = new SalidaDAO();
+            resultado = dao.Registrar(id, can, razon, codUsu, fech);
+            return resultado;
+        }
 
         [WebMethod]
         public string getAllReporte()
         {
-            SalidaDAO dao;
-            dao = new SalidaDAO();
-            List<Salida> lista;
-            lista = dao.getAllReporte();
+            ReporteSalidasDAO dao;
+            dao = new ReporteSalidasDAO();
+            List<ReporteSalidas> lista;
+            lista = dao.getAll();
             String strJSON;
 
             strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

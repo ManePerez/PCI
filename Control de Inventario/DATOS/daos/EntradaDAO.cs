@@ -12,11 +12,9 @@ namespace DATOS.daos
 {
     public class EntradaDAO
     {
-
         Conexion cn = new Conexion();
-        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, DateTime fech)
+        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, string fech)
         {
-
             if (cn.Conectar())
             {
                 try
@@ -52,7 +50,6 @@ namespace DATOS.daos
         {
             List<Entrada> lista = new List<Entrada>();
             Conexion con = new Conexion();
-
             DataSet datos = con.LLenaComboGrid("SELECT * FROM Entrada;");
             DataTable dt = datos.Tables[0];
             Entrada e;

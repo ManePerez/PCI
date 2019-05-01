@@ -8,6 +8,7 @@
                 <asp:ServiceReference Path="~/servicios/wsUsuarios.asmx" />
             </Services>
         </asp:ScriptManager>
+    <h3 style="text-align:center">Nuevo Usuario</h3>
     <div class="container" style="margin-top:5%">
           <div class="row">
             <div class="col">

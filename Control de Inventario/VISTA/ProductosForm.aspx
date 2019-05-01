@@ -8,6 +8,7 @@
                 <asp:ServiceReference Path="~/servicios/wsProductos.asmx" />
             </Services>
         </asp:ScriptManager>
+    <h3 style="text-align:center">Nuevo Producto</h3>
      <div class="container" style="margin-top:5%">          
             <div class="row" style="margin-top:5%">
             <div class="col">
@@ -44,7 +45,7 @@
                <select class="form-control" tabindex="7" id="cmbCategoria">
                 <option value="1">Ganchos</option>
                   <option value="2">Cromados</option>
-                  <option value="3">Cascadas</option>
+                  <option value="3">Cascadas</option>                  
               </select>
               </div>
             </div>

@@ -20,6 +20,9 @@
             </Services>
         </asp:ScriptManager> 
        <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ">                          
             </ul>
@@ -54,7 +57,6 @@
                  </div>
              </div>
         </div>        
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

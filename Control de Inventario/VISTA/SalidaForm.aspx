@@ -8,6 +8,7 @@
                 <asp:ServiceReference Path="~/servicios/wsSalidas.asmx" />
             </Services>
         </asp:ScriptManager>
+    <h3 style="text-align:center">Nueva Salida de Productos</h3>
      <div class="container" style="margin-top:3%">
           <div class="row">
             <div class="col">
@@ -28,7 +29,7 @@
               <input id="rbdCa" type="radio" name="MotivoSalida" value="Cambio"/>Cambio
               </div>
               <div class="col" style="text-align:center">
-                  <button type="button" class="btn btn-primary" style="width:120px; font-weight:500" onclick="guardar()">Agregar</button>
+                 <button type="button" class="btn btn-primary" style="width:120px; font-weight:500" onclick="guardar()">Agregar</button>
               </div> 
             </div>
             <div class="col">                
@@ -43,8 +44,7 @@
                   <th scope="col">Codigo</th>                  
                   <th scope="col">Cantidad</th>
                   <th scope="col">Fecha</th>
-                  <th scope="col">Motivo/Razon</th>
-                  <th scope="col">Empleado</th>
+                  <th scope="col">Motivo/Razon</th>                  
                 </tr>
               </thead>
               <tbody id="tblProducto">                              
@@ -57,11 +57,29 @@
               <div class="col">              
               </div>
                <div class="col" style="text-align:center">               
-                 <button type="button" class="btn btn-info" style="width:120px; font-weight:500">Registrar</button>
-                   <button type="button" class="btn btn-danger" style="width:120px;font-weight:500" >Cancelar</button>
+                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#miModal">Finalizar</button>
              </div>
              <div class="col">              
              </div>
               </div>
         </div>
+    <div class="modal" tabindex="-1" role="dialog" id="miModal">
+             <div class="modal-dialog" role="document">
+                 <div class="modal-content">
+                     <div class="modal-header">
+                        <h5 class="modal-title text-center">Finalizar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                     </div>
+                     <div class="modal-body">                                                                          
+                          <p>¿Finalizar registro de entradas?</p>                                                
+                     </div>
+                     <div class="modal-footer">
+                         <asp:button type="button" class="btn btn-info" runat="server" onclick="btnAceptar_click" Text="Aceptar"></asp:button>
+                         <button type="button" class="btn btn-danger" data-dismiss="modal" runat="server">Cancelar</button>                         
+                     </div>
+                 </div>
+             </div>
+        </div> 
 </asp:Content>

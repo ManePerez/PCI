@@ -1788,6 +1788,8 @@
     <Content Include="Account\Web.config" />
     <Content Include="Inicio.aspx" />
     <Content Include="Inicio.js" />
+    <Content Include="Inventario.aspx" />
+    <Content Include="Inventario.js" />
     <Content Include="ListaCategorias.aspx" />
     <Content Include="ListaCategorias.js" />
     <Content Include="ListaProducto.aspx" />
@@ -3231,6 +3233,7 @@
     <Content Include="servicios\wsCategorias.asmx" />
     <Content Include="servicios\wsDetalleEntradas.asmx" />
     <Content Include="servicios\wsEntradas.asmx" />
+    <Content Include="servicios\wsInventario.asmx" />
     <Content Include="servicios\wsProductos.asmx" />
     <Content Include="servicios\wsSalidas.asmx" />
     <Content Include="servicios\wsUsuarios.asmx" />
@@ -3399,6 +3402,13 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inventario.aspx.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventario.aspx.designer.cs">
+      <DependentUpon>Inventario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListaCategorias.aspx.cs">
       <DependentUpon>ListaCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3474,6 +3484,10 @@
     </Compile>
     <Compile Include="servicios\wsEntradas.asmx.cs">
       <DependentUpon>wsEntradas.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="servicios\wsInventario.asmx.cs">
+      <DependentUpon>wsInventario.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="servicios\wsProductos.asmx.cs">

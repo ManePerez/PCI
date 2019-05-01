@@ -1,8 +1,5 @@
 ﻿$(document).ready(function () {
-
-
-    VISTA.servicios.wsEntradas.getAll(onComplete_cargarlista);
-    GetUserName();
+    VISTA.servicios.wsEntradas.getAll(onComplete_cargarlista);    
 });
 
 function onComplete_cargarlista(response) {
@@ -14,7 +11,7 @@ function onComplete_cargarlista(response) {
     m = n.getMonth() + 1;
     //Día
     d = n.getDate();
-    var fecha = (y + "-" + m + "-" + d);
+    var fecha = (d + "/" + m + "/" + y);
     
     $("#txtFecha").val(fecha);
     var dataSet = JSON.parse(response);
@@ -66,9 +63,4 @@ function calcular() {
     var precioUnitario = $("#txtPrecioUnitario").val();
     var subtotal = (cantidad * precioUnitario);
     $("#txtSubtotal").val(subtotal);
-}
-function GetUserName() {
-
-    var username = '<%= Session["UserName"] %>';
-    alert(username);
 }

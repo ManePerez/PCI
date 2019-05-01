@@ -9,7 +9,7 @@
                 <asp:ServiceReference Path="~/servicios/wsProductos.asmx" />
             </Services>
         </asp:ScriptManager> 
-        <br />       
+        <h3 style="text-align:center">Lista de Productos</h3>    
         <table  id="example" class="table table-striped table-bordered small" style="margin: 0 auto; width:90%" >  
         </table>       
 </asp:Content>

@@ -37,7 +37,7 @@ function guardar() {
     var cantidad = $("#txtCantidad").val();
     var fecha = $("#txtFecha").val();
     var empleado = 1;
-    var razon;
+    var razon = "";
     var radios = document.getElementsByName('MotivoSalida');
     for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
@@ -45,8 +45,8 @@ function guardar() {
             break;
         }
     }
-    var fila = "<tr><td>" + codigo + "</td><td>" + cantidad + "</td><td>" + fecha + "</td><td>" + razon + "</td></tr>" + empleado + "</td></tr>";
-
+    var fila = "<tr><td>" + codigo + "</td><td>" + cantidad + "</td><td>" + fecha + "</td><td>" + razon;
+    VISTA.servicios.wsSalidas.Registrar(codigo,cantidad,razon,empleado,fecha);
     var btn = document.createElement("TR");
     btn.innerHTML = fila;
     document.getElementById("tblProducto").appendChild(btn);

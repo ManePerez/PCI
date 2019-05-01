@@ -9,7 +9,7 @@
             <asp:ServiceReference Path="~/servicios/wsEntradas.asmx" />
         </Services>
     </asp:ScriptManager>
-
+    <h3 style="text-align:center">Reporte de Entradas</h3>
     <table id="cargaDatos" class="table table-striped table-bordered small" style="margin: 0 auto; width: 90%">
     </table>
 </asp:Content>

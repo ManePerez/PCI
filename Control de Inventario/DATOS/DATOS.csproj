@@ -59,12 +59,16 @@
     <Compile Include="daos\DetalleEntradaDAO.cs" />
     <Compile Include="daos\EntradaDAO.cs" />
     <Compile Include="daos\ProductoDAO.cs" />
+    <Compile Include="daos\ReporteEntradasDAO.cs" />
+    <Compile Include="daos\ReporteSalidasDAO.cs" />
     <Compile Include="daos\SalidaDAO.cs" />
     <Compile Include="daos\UsuarioDAO.cs" />
     <Compile Include="modelo\Categoria.cs" />
     <Compile Include="modelo\DetalleEntrada.cs" />
     <Compile Include="modelo\Entrada.cs" />
     <Compile Include="modelo\Producto.cs" />
+    <Compile Include="modelo\ReporteEntradas.cs" />
+    <Compile Include="modelo\ReporteSalidas.cs" />
     <Compile Include="modelo\Salida.cs" />
     <Compile Include="modelo\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

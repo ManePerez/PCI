@@ -9,6 +9,7 @@
                 <asp:ServiceReference Path="~/servicios/wsEntradas.asmx" />
             </Services>
         </asp:ScriptManager>
+    <h3 style="text-align:center">Nueva Entrada de Productos</h3>
     <div class="container" style="margin-top:3%">
           <div class="row">
             <div class="col">

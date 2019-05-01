@@ -43,7 +43,7 @@ namespace VISTA.servicios
         }
 
         [WebMethod]
-        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, DateTime fech) {
+        public bool Registrar(int id, int can, decimal precio,decimal subt, int codUsu, string fech) {
             bool resultado = false;
             EntradaDAO dao = new EntradaDAO();
             resultado = dao.Registrar(id, can, precio,subt, codUsu, fech);
@@ -52,10 +52,10 @@ namespace VISTA.servicios
         [WebMethod]
         public string getAllReporte()
         {
-            EntradaDAO dao;
-            dao = new EntradaDAO();
-            List<Entrada> lista;
-            lista = dao.getAllReporte();
+            ReporteEntradasDAO dao;
+            dao = new ReporteEntradasDAO();
+            List<ReporteEntradas> lista;
+            lista = dao.getAll();
             String strJSON;
 
             strJSON = JsonConvert.SerializeObject(lista, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

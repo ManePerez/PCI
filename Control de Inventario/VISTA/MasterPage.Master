@@ -25,6 +25,9 @@
     <form id="form1" runat="server">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ">
                 <li class="nav-item dropdown">
@@ -81,10 +84,19 @@
                   <div class="dropdown-divider"></div>                  
                 </div>
               </li> 
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Inventario
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="Inventario.aspx">Realizar</a>                                    
+                  <div class="dropdown-divider"></div>                  
+                </div>
+              </li> 
             </ul>
             <ul class="navbar-nav justify-content-end">            
               <li class="nav-item">               
-                <button type="button" class="btn btn-light" data-toggle="modal" data-target="#miModal">Cerrar Sesión</button>
+                <asp:button runat="server" type="button" class="btn btn-light" OnClick="CerrarSesion_Click" Text="Cerrar Sesión"></asp:button>
               </li>
             </ul>
           </div>
